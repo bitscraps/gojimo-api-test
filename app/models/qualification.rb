@@ -4,7 +4,7 @@ class Qualification
   def initialize(attributes={})
     @id = attributes[:id] || ""
     @name = attributes[:name] || ""
-    @subjects = []
     @link = attributes[:link] || ""
+    @subjects = []
   end
 end
