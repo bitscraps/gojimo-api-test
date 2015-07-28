@@ -3,5 +3,7 @@
 <% @qualifications.each do |qualification| %>
   <%= content_tag(:div, id: qualification.id, class: 'qualification') do %>
     <h2><%= qualification.name %></h1>
+
+    <%= link_to 'View Subjects', qualification_subjects_path(qualification.id) %>
   <% end %>
 <% end %>

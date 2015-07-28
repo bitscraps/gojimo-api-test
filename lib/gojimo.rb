@@ -14,8 +14,9 @@ class Gojimo
     qualification = make_request("#{ENV['GOJIMO_API_URL']}qualifications/#{qualification}")
 
     subjects = qualification["subjects"]
+
     subjects.map { |s| Subject.new({id: s["id"],
-                                    title: s["title"],
+                                    title: s["name"],
                                     colour: s["colour"],
                                     link: s["link"]}) }
   end
