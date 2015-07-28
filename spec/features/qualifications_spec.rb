@@ -15,13 +15,13 @@ feature 'A user' do
       visit '/'
     end
 
-    VCR.use_cassette("qualification") do
+    VCR.use_cassette("qualification_and_subjects") do
       within '#2622c2f7-73cb-49fa-941e-204f6735d0d8' do
         click_link 'View Subjects'
       end
     end
 
-    expect(page).to have_content 'Subjects'
+    expect(page).to have_content 'Subjects For Junior Certificate'
     expect(page).to have_content 'Music'
   end
 end
