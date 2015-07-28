@@ -7,7 +7,7 @@ class Gojimo
 
     qualifications.map { |q| Qualification.new({id: q["id"],
                                                 name: q["name"],
-                                                link: q["link"]} )}
+                                                link: q["link"]})}
   end
 
   def get_qualification(id)
@@ -26,7 +26,8 @@ class Gojimo
     subjects.map { |s| Subject.new({id: s["id"],
                                     title: s["name"],
                                     colour: s["colour"],
-                                    link: s["link"]}) }
+                                    link: s["link"],
+                                    icon: s["icon"]}) }
   end
 
   private
