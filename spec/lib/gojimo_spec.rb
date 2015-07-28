@@ -18,6 +18,15 @@ describe "Gojimo" do
     end
   end
 
+  it "retrieves details for a qualification" do
+    VCR.use_cassette("qualification") do
+      qualification = @gojimo.get_qualification("2622c2f7-73cb-49fa-941e-204f6735d0d8")
+
+      expect(qualification).to be_instance_of Qualification
+      expect(qualification.name).to eq "Junior Certificate"
+    end
+  end
+
   it "retrieves a list of subjects for a qualification" do
     VCR.use_cassette("qualification") do
       subjects = @gojimo.get_subjects_for("2622c2f7-73cb-49fa-941e-204f6735d0d8")

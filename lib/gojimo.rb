@@ -10,6 +10,14 @@ class Gojimo
                                                 link: q["link"]} )}
   end
 
+  def get_qualification(id)
+    qualification = make_request("#{ENV['GOJIMO_API_URL']}qualifications/#{id}")
+
+    Qualification.new({id: qualification["id"],
+                       name: qualification["name"],
+                       link: qualification["link"]})
+  end
+
   def get_subjects_for(qualification)
     qualification = make_request("#{ENV['GOJIMO_API_URL']}qualifications/#{qualification}")
 
