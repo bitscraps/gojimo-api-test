@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'qualifications#index'
 
-  resources :qualifications
+  resources :qualifications do
+    resources :subjects
+  end
 end
