@@ -3,18 +3,19 @@ class Gojimo
   end
 
   def get_qualifications
-    qualifications = []
+    qualifications = make_request("#{ENV['GOJIMO_API_URL']}qualifications")
 
-    request = Typhoeus::Request.new("#{ENV['GOJIMO_API_URL']}qualifications")
-    request.on_complete do |response|
+    qualifications.map { |q| Qualification.new({id: q[:id],
+                                                name: q[:name],
+                                                link: q[:link]} )}
+  end
 
-      JSON.parse(response.body).each do |qualification|
-        qualifications << Qualification.new
-      end
-    end
+  private
 
-    request.run
+  def make_request(url)
+    request = Typhoeus::Request.new(url)
+    response = request.run
 
-    return qualifications
+    JSON.parse(response.body)
   end
 end
