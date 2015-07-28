@@ -1,0 +1,43 @@
+@import 'variables';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: $primary-color;
+  width:100%;
+  text-align:center;
+
+  h1 {
+    margin: 0;
+    padding:30px;
+  }
+}
+
+.qualification {
+  width:30%;
+  margin:1%;
+  padding:20px;
+  box-sizing: border-box;
+  display:inline-block;
+  box-shadow: 0 0 3px #CCC;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.subject {
+  width:30%;
+  margin:1%;
+  padding:20px;
+  box-sizing: border-box;
+  display:inline-block;
+  box-shadow: 0 0 3px #CCC;
+
+  h2 {
+    margin-top: 0;
+  }
+}

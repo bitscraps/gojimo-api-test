@@ -1,0 +1,20 @@
+@import 'variables';
+
+body {
+  font-family: $font-family;
+  font-weight:300;
+}
+
+h1 {
+  font-weight: 300;
+  color:#FFF;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+a {
+  color: #000;
+}

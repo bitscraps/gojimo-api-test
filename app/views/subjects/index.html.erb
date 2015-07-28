@@ -1,6 +1,6 @@
-<h1>Subjects</h1>
-
-<%= @subjects.inspect %>
+<header>
+  <h1>Subjects</h1>
+</header>
 
 <% @subjects.each do |subject| %>
   <%= content_tag(:div, id: subject.id, class: 'subject') do %>
