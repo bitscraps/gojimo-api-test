@@ -1,5 +1,6 @@
 class Gojimo
   def initialize
+    @qualification
   end
 
   def get_qualifications
@@ -11,23 +12,23 @@ class Gojimo
   end
 
   def get_qualification(id)
-    qualification = make_request("#{ENV['GOJIMO_API_URL']}qualifications/#{id}")
+    response = make_request("#{ENV['GOJIMO_API_URL']}qualifications/#{id}")
 
-    Qualification.new({id: qualification["id"],
-                       name: qualification["name"],
-                       link: qualification["link"]})
-  end
+    qualification = Qualification.new({ id: response["id"],
+                                        name: response["name"],
+                                        link: response["link"]
+                                     })
 
-  def get_subjects_for(qualification)
-    qualification = make_request("#{ENV['GOJIMO_API_URL']}qualifications/#{qualification}")
+    response["subjects"].each do |subject|
+      qualification.subjects << Subject.new({ id: subject["id"],
+                                              title: subject["name"],
+                                              colour: subject["colour"],
+                                              link: subject["link"],
+                                              icon: subject["icon"]
+                                            })
+    end
 
-    subjects = qualification["subjects"]
-
-    subjects.map { |s| Subject.new({id: s["id"],
-                                    title: s["name"],
-                                    colour: s["colour"],
-                                    link: s["link"],
-                                    icon: s["icon"]}) }
+    qualification
   end
 
   private

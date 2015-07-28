@@ -4,7 +4,7 @@
   <%= link_to 'Back to qualifications', qualifications_path %>
 </header>
 
-<% @subjects.each do |subject| %>
+<% @qualification.subjects.each do |subject| %>
   <%= content_tag(:div, id: subject.id, class: 'subject', style: "background-color: #{subject.colour}") do %>
     <h2><%= subject.title %></h1>
   <% end %>
