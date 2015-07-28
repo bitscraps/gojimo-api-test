@@ -15,6 +15,7 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
+  gem 'dotenv'
   gem 'spring'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
