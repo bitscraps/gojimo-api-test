@@ -12,10 +12,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'unicorn'
+gem 'typhoeus'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
-  gem 'dotenv'
+  gem 'dotenv-rails'
   gem 'spring'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
@@ -25,5 +26,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'database_cleaner'
 end

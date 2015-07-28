@@ -55,12 +55,19 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
-    dotenv (2.0.2)
+    dotenv (1.0.2)
+    dotenv-rails (1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
+    ethon (0.7.3)
+      ffi (>= 1.3.0)
     execjs (2.5.2)
+    ffi (1.9.8)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -139,6 +146,7 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    safe_yaml (1.0.4)
     sass (3.4.16)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -163,6 +171,8 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
+    typhoeus (0.7.1)
+      ethon (>= 0.7.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -172,11 +182,15 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    vcr (2.5.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webmock (1.19.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     websocket-driver (0.3.5)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -188,7 +202,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner
-  dotenv
+  dotenv-rails
   jbuilder (~> 2.0)
   jquery-rails
   launchy
@@ -201,6 +215,9 @@ DEPENDENCIES
   shoulda-matchers
   spring
   turbolinks
+  typhoeus
   uglifier (>= 1.3.0)
   unicorn
+  vcr
   web-console (~> 2.0)
+  webmock
